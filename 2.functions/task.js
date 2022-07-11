@@ -22,6 +22,8 @@ function getArrayParams(arr) {
     }
   }
 
+  avg = Number(avg.toFixed(2));
+
   return { min: min, max: max, avg: avg };
 };
 
