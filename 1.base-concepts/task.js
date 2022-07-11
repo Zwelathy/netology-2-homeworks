@@ -6,8 +6,8 @@ function solveEquation(a, b, c) {
 
   if (d < 0) {
     return result;
-  } else if (d == 0) {
-    result = (-b) / (2 * a);
+  } else if (d === 0) {
+    result.push((-b) / (2 * a));
   } else {
     result.push((-b + Math.sqrt(d)) / (2 * a));
     result.push((-b - Math.sqrt(d)) / (2 * a));
