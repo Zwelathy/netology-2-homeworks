@@ -8,22 +8,17 @@ class PrintEditionItem {
   }
 
   fix() {
-    this.state = this.state * 1.5;
-    if (this.state > 100) {
-      this.state = 100;
-    }
-
-    return this.state;
+    return this.state = this.state * 1.5;
   }
 
-  set state (num) {
+  set state(num) {
     if (num <= 0) {
-      this.state = 0;
+      this._state = 0;
     } else if (num > 100) {
-      this.state = 100;
+      this._state = 100;
+    } else {
+      this._state = num;
     }
-
-    this._state = num;
   }
 
   get state() {
@@ -83,13 +78,8 @@ class Library {
 
   findBookBy(type, value) {
     let thatBook = this.books.find(key => key[type] === value);
-    
-    if (thatBook != undefined) {
-      return thatBook;
-    }
-    else {
-      return null;
-    }
+
+    return thatBook ?? null;
   }
 
   giveBookByName(bookName) {
