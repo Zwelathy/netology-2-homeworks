@@ -35,9 +35,11 @@ function debounceDecoratorNew(func, ms) {
   function wrapper(...args) {
     if (timer === null) {
       func(...args);
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), ms);
+
     }
+    
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), ms);
   }
 
   return wrapper;
@@ -49,9 +51,11 @@ function debounceDecorator2(func) {
   function wrapper(...args) {
     if (timer === null) {
       func(...args);
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), ms);
+
     }
+
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), ms);
     wrapper.count++;
   }
   wrapper.count = 0;
